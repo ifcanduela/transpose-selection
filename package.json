@@ -1,13 +1,13 @@
 {
   "name": "transpose-selection",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "Transpose multiple selections",
   "keywords": [
   ],
   "activationCommands": {
     "atom-workspace": "transpose-selection:transpose"
   },
-  "repository": "https://github.com/atom/transpose-selection",
+  "repository": "https://github.com/ifcanduela/transpose-selection",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
