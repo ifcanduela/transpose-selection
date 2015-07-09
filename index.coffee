@@ -1,9 +1,11 @@
 module.exports =
   activate: (state) ->
     atom.commands.add 'atom-workspace', 'transpose-selection:transpose': =>
-      @transpose()
+      @transpose_forward()
+    atom.commands.add 'atom-workspace', 'transpose-selection:transpose-backward': =>
+      @transpose_backward()
 
-  transpose: ->
+  transpose_forward: ->
     editor = atom.workspace.getActiveTextEditor()
     selections = editor.getSelections()
 
@@ -20,3 +22,21 @@ module.exports =
       i++
 
     selections[0].insertText(a, {select: true})
+
+  transpose_backward: ->
+    editor = atom.workspace.getActiveTextEditor()
+    selections = editor.getSelections()
+
+    return unless selections.length > 1
+
+    i = selections.length - 2
+    a = selections[selections.length - 1].getText()
+
+    while i >= 0
+      b = selections[i].getText()
+      selections[i].insertText(a, {select: true})
+      a = b
+
+      i--
+
+    selections[selections.length - 1].insertText(a, {select: true})

@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Transpose multiple selections",
   "keywords": [],
-  "activationCommands": {
-    "atom-workspace": "transpose-selection:transpose"
-  },
   "repository": "https://github.com/ifcanduela/transpose-selection",
   "license": "MIT",
   "engines": {
